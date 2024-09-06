@@ -14,7 +14,7 @@ _TECHCOMBANK_APP_TEXT = 'Techcombank'
 _TECHCOMBANK_LOGIN_TEXT = 'Log in'
 # _TECHCOMBANK_USERNAME_FIELD_ID = 'vn.com.techcombank.bb.app:id/edtUsername'
 _TECHCOMBANK_USERNAME_TEXT = 'HELLO'
-# _TECHCOMBANK_PWD_FIELD_ID = 'vn.com.techcombank.bb.app:id/edtPassword'
+_TECHCOMBANK_PWD_FIELD_ID = 'vn.com.techcombank.bb.app:id/edtPassword'
 _TECHCOMBANK_PWD_TEXT = 'WORLD'
 
 _BIDV_BANK_APP_TEXT = 'SmartBanking'
@@ -68,8 +68,8 @@ class MoblyTest(base_test.BaseTestClass):
     # Input username
     self.dut.adb.shell(['input', 'text', _TECHCOMBANK_USERNAME_TEXT])
     self.dut.ui.press.enter()
-    time.sleep(2)
     # Input password
+    self.dut.ui(res=_TECHCOMBANK_PWD_FIELD_ID).wait.click()
     self.dut.adb.shell(['input', 'text', _TECHCOMBANK_PWD_TEXT])
     # Press 'Back' 5 times to Home
     for _ in range(5):
