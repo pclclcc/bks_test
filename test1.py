@@ -23,18 +23,6 @@ _BIDV_PHONE_FIELD_ID = 'com.vnpay.bidv:id/wrap_phone'
 _BIDV_PHONE_NUMBER_TEXT = '0912345678'
 _BIDV_PWD_TEXT = '123456'
 
-# class FindError(Exception):
-#     """Exception raised for errors in the input.
-
-#     Attributes:
-#         expression -- input expression in which the error occurred
-#         message -- explanation of the error
-#     """
-#     def __init__(self, value):
-#         self.value = value
-    
-#     def __str__(self):
-#       return(f'{self.value} not found!')
 
 class MoblyTest(base_test.BaseTestClass):
 
@@ -61,8 +49,8 @@ class MoblyTest(base_test.BaseTestClass):
     self.dut.ui(res=_VCB_FIELD_ID).wait.click()
     time.sleep(2)
     for i in _VCB_USERID_LIST:
-        time.sleep(0.5)
-        self.dut.adb.shell(['input', 'keyevent', f'KEYCODE_{i}'])
+      time.sleep(0.5)
+      self.dut.adb.shell(['input', 'keyevent', f'KEYCODE_{i}'])
     # Press 'Back' 5 times to Home
     for _ in range(5):
       self.dut.ui.press.back()
@@ -85,7 +73,7 @@ class MoblyTest(base_test.BaseTestClass):
     self.dut.adb.shell(['input', 'text', _TECHCOMBANK_PWD_TEXT])
     # Press 'Back' 5 times to Home
     for _ in range(5):
-        self.dut.ui.press.back()
+      self.dut.ui.press.back()
 
   # Open BIDV Bank App
   def test_open_bidv(self):
@@ -108,7 +96,7 @@ class MoblyTest(base_test.BaseTestClass):
     self.dut.adb.shell(['input', 'text', _BIDV_PWD_TEXT])
     # Press 'Back' 5 times to Home
     for _ in range(5):
-            self.dut.ui.press.back()
+      self.dut.ui.press.back()
  
   #  Press Allow button of Permission if needed
   def press_allow(self):
