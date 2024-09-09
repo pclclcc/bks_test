@@ -1,6 +1,6 @@
 # Mobly + Snippet UiAutomator
 ## Description
-This test is to verify login cathay homepage.
+This test is to verify login apps.
 It used snippet-uiautomator and mobly to build the test.
 -  mobly: https://github.com/google/mobly
 -  snippet-uiautomator: https://github.com/google/snippet-uiautomator
